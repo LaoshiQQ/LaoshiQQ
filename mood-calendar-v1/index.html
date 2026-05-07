@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Calendar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone" aria-label="心情日历">
+        <header class="topbar">
+          <button class="tool-button" aria-label="菜单"><span></span><span></span><span></span></button>
+          <div class="top-actions">
+            <button class="search-button" aria-label="搜索"></button>
+            <button class="bell-button" aria-label="提醒"></button>
+            <button class="book-button" aria-label="日记本"></button>
+          </div>
+        </header>
+        <section class="month-header" aria-label="当前月份">
+          <button class="month-arrow" id="prevMonth" aria-label="上个月">‹</button>
+          <div><p id="yearLabel"></p><h1 id="monthTitle"></h1></div>
+          <button class="month-arrow" id="nextMonth" aria-label="下个月">›</button>
+        </section>
+        <section class="calendar-panel" aria-label="月历">
+          <div class="calendar-toggles" aria-label="日历显示选项">
+            <button class="toggle-button" id="solarToggle" type="button" aria-pressed="false"><span class="toggle-title">节气</span><span class="switch-track"><span class="switch-text switch-on">ON</span><span class="switch-text switch-off">OFF</span><span class="switch-knob"></span></span></button>
+            <button class="toggle-button" id="lunarToggle" type="button" aria-pressed="false"><span class="toggle-title">农历</span><span class="switch-track"><span class="switch-text switch-on">ON</span><span class="switch-text switch-off">OFF</span><span class="switch-knob"></span></span></button>
+          </div>
+          <div class="weekday-row" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </section>
+        <section class="solar-video-card" aria-label="节气视频">
+          <video id="solarVideo" class="solar-video" autoplay muted loop playsinline preload="metadata" poster="%E8%8A%82%E6%B0%94%E5%9B%BE/%E5%A4%9C%E6%99%9A.jpg">
+            <source id="solarVideoSource" src="%E8%8A%82%E6%B0%94%E5%9B%BE/%E8%8A%82%E6%B0%94%E8%A7%86%E9%A2%91.mp4" type="video/mp4" />
+          </video>
+        </section>
+        <button class="add-button" id="openEditor" aria-label="添加心情日记">+</button>
+      </section>
+      <div class="overlay" id="overlay" hidden></div>
+      <section class="entry-sheet" id="entrySheet" aria-label="添加心情日记" hidden>
+        <div class="sheet-handle"></div>
+        <header class="sheet-header"><div><p class="sheet-kicker">Mood Diary</p><h2 id="selectedDate"></h2></div><button class="close-button" id="closeEditor" aria-label="关闭">×</button></header>
+        <div class="mood-preview" id="moodPreview" aria-live="polite"></div>
+        <p class="mood-name" id="moodName"></p>
+        <div class="mood-grid" id="moodGrid" aria-label="选择心情"></div>
+        <label class="note-field" for="noteInput"><span>今天想记下什么？</span><textarea id="noteInput" rows="4" maxlength="120" placeholder="写一点点就好..."></textarea></label>
+        <button class="save-button" id="saveEntry">保存记录</button>
+        <p class="save-status" id="saveStatus" aria-live="polite"></p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
