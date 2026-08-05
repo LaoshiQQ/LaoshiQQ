@@ -1,0 +1,125 @@
+Exit code: 0
+Wall time: 0.5 seconds
+Output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Queens Community House Salesforce quick access portal">
+  <title>Queens Community House | Quick Access</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #181818;
+    }
+
+    header {
+      background: #00a1e0;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 { margin: 0; font-size: clamp(26px, 5vw, 34px); }
+    header p { margin: 8px 0 0; font-size: 18px; }
+
+    main {
+      width: min(100%, 1000px);
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #d8dde6;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+    }
+
+    .card h2 { margin: 0; color: #007eaf; font-size: 22px; }
+    .card p { flex: 1; color: #555; line-height: 1.5; }
+
+    .button {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 11px 20px;
+      background: #007eaf;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: background .2s;
+    }
+
+    .button:hover, .button:focus-visible { background: #005f86; }
+    .button:focus-visible { outline: 3px solid #181818; outline-offset: 3px; }
+
+    footer {
+      margin: 40px 0 20px;
+      padding: 0 20px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card, .button { transition: none; }
+      .card:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Queens Community House</h1>
+    <p>Salesforce Quick Access Portal</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Salesforce Sandbox</h2>
+      <p>Log in to the QCH Partial Salesforce Sandbox.</p>
+      <a class="button" href="https://qch--partial.sandbox.my.salesforce.com/?un=sfadmin%40qchnyc.org.partial" target="_blank" rel="noopener noreferrer">Open</a>
+    </section>
+
+    <section class="card">
+      <h2>QCH Website</h2>
+      <p>Visit the main Queens Community House website.</p>
+      <a class="button" href="https://www.qchnyc.org/" target="_blank" rel="noopener noreferrer">Visit</a>
+    </section>
+
+    <section class="card">
+      <h2>IT Help Desk</h2>
+      <p>Submit an IT support ticket.</p>
+      <a class="button" href="https://queenscommunityhouse.formtitan.com/ftabdf2fa21682099268061#/" target="_blank" rel="noopener noreferrer">Open</a>
+    </section>
+
+    <section class="card">
+      <h2>QCH Intraweb</h2>
+      <p>Open SharePoint and employee resources.</p>
+      <a class="button" href="https://qchnyc.sharepoint.com/" target="_blank" rel="noopener noreferrer">Open</a>
+    </section>
+  </main>
+
+  <footer>&copy; <span id="year"></span> Queens Community House</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
